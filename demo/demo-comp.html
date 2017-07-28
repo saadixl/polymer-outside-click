@@ -1,0 +1,39 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../polymer-outside-click.html">
+
+<dom-module id="demo-comp">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      .box {
+        width: 200px;
+        height: 200px;
+        background: orange;
+        padding: 10px;
+      }
+    </style>
+    <polymer-outside-click clicked={{clicked}}>
+      <div class="box">
+        <p>Click anywhere</p>
+      </div>
+    </polymer-outside-click>
+    <template is="dom-if" if="{{clicked}}">
+      <p>Outside clicked!</p>
+    </template>
+    <template is="dom-if" if="{{!clicked}}">
+      <p>Box clicked!</p>
+    </template>
+  </template>
+  <script>
+    Polymer({
+      is: 'demo-comp',
+      properties: {
+        clicked: {
+          type: Boolean
+        }
+      }
+    });
+  </script>
+</dom-module>

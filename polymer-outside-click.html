@@ -1,0 +1,44 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="polymer-outside-click">
+  <template>
+    <style>
+      :host {
+        display: inline-block;
+      }
+    </style>
+    <content></content>
+  </template>
+  <script>
+    Polymer({
+      is: 'polymer-outside-click',
+      properties: {
+        clicked: {
+          type: Boolean,
+          notify: true
+        }
+      },
+      attached: function() {
+        document.body.addEventListener('click', this.listenClick.bind(this));
+      },
+      detached: function() {
+        document.body.removeEventListener('click', this.listenClick.bind(this));
+      },
+      listenClick: function(event) {
+        var wrappedEl = this,
+        clickedEl = event.target;
+        this.clicked = !this.isChild(wrappedEl, clickedEl);
+      },
+      isChild: function(parent, child) {
+        var node = child.parentNode;
+        while (node) {
+          if (node === parent) {
+            return true;
+          }
+          node = node.parentNode;
+        }
+        return false;
+      }
+    });
+  </script>
+</dom-module>
