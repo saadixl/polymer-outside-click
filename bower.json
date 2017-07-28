@@ -4,7 +4,8 @@
   "main": "polymer-outside-click.html",
   "version": "0.1",
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.9.0"
+    "polymer": "Polymer/polymer#^1.9.0",
+    "polymer-outside-click": "https://github.com/saadixl/polymer-outside-click.git"
   },
   "devDependencies": {
     "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
