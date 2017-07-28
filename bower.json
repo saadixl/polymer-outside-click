@@ -2,7 +2,7 @@
   "name": "polymer-outside-click",
   "description": "Outside click listener wrapper component",
   "main": "polymer-outside-click.html",
-  "version": "v1.0.0",
+  "version": "v1.0",
   "dependencies": {
     "polymer": "Polymer/polymer#^1.9.0",
     "polymer-outside-click": "https://github.com/saadixl/polymer-outside-click.git"
